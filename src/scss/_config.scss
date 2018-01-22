@@ -1,0 +1,22 @@
+
+$responsive-breakpoints: (
+    mobile-min: 320px,
+    small-tablet-min: 400px,
+    tablet-min: 580px,
+    big-tablet-min: 750px,
+    desktop-min: 1000px,
+);
+
+$media-queries: (
+    mobile-min: 'all and (min-width: #{map-get($responsive-breakpoints, mobile-min)})',
+    // -----------------------------------------------------------------------------------------------------------------
+    small-tablet-min: 'all and (min-width: #{map-get($responsive-breakpoints, small-tablet-min)})',
+    tablet-min: 'all and (min-width: #{map-get($responsive-breakpoints, tablet-min)})',
+    big-tablet-min: 'all and (min-width: #{map-get($responsive-breakpoints, big-tablet-min)})',
+    desktop-min: 'all and (min-width: #{map-get($responsive-breakpoints, desktop-min)})',
+
+    // sass-lint:disable no-vendor-prefixes
+    ie-10-plus: 'all and (-ms-high-contrast: none), (-ms-high-contrast: active)',
+    // sass-lint:enable no-vendor-prefixes
+);
+

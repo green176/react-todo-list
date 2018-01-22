@@ -1,0 +1,227 @@
+@import "scss/mixins";
+
+* {
+    box-sizing: border-box;
+}
+
+.container {
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+
+    @include media(big-tablet-min) {
+        width: 700px;
+    }
+
+    @include media(desktop-min) {
+        width: 900px;
+    }
+}
+
+.App {
+    text-align: center;
+}
+
+.App-logo {
+    height: 80px;
+}
+
+.App-header {
+    background-color: #222;
+    height: 150px;
+    padding: 20px;
+    color: white;
+    margin-bottom: 10px;
+}
+
+.App-title {
+    font-size: 1.5em;
+}
+
+.App-intro {
+    font-size: large;
+}
+
+.item {
+    border: 1px solid lightblue;
+    padding: 10px;
+    margin: 10px;
+    width: 300px;
+}
+
+.actions {
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    max-width: 300px;
+
+    @include media(small-tablet-min) {
+        max-width: 400px;
+    }
+}
+
+.filter-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    select {
+        width: 300px;
+    }
+}
+
+.todo-item {
+    display: flex;
+    justify-content: space-between;
+    text-align: left;
+    margin: 10px auto;
+    padding: 10px;
+    border: 1px solid #D3D3D3;
+    border-radius: 5px;
+    box-shadow: 3px 3px 5px 1px #D3D3D3;
+    width: 300px;
+
+    @include media(small-tablet-min) {
+        width: 400px;
+    }
+
+    a {
+        text-decoration: none;
+        color: #222222;
+        flex: 1 1 100%;
+    }
+
+    .title {
+        padding-left: 10px;
+        padding-right: 10px;
+        position: relative;
+    }
+
+    &.important {
+        background: #FFFFE0;
+    }
+
+    &.very-important {
+        background: #ffb6c1;
+    }
+
+    &.complete {
+        box-shadow: none;
+
+        .title {
+            color: #878787;
+            text-decoration: line-through;
+        }
+
+    }
+
+    &.expired {
+        border-color: #FF0000;
+
+        .title {
+            color: #FF0000;
+        }
+    }
+
+    .button-container {
+        button {
+            background: none;
+            border: none;
+            font-size: 20px;
+            outline: none;
+            color: #ff0000;
+            cursor: pointer;
+            text-shadow: 1px 1px 1px #222222;
+            margin: 0;
+            padding: 0;
+        }
+    }
+}
+
+.new-todo-container {
+    .form-group {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        margin: 5px auto;
+        width: 300px;
+
+        @include media(small-tablet-min) {
+            flex-direction: row;
+            width: 400px;
+        }
+
+        label {
+            text-align: left;
+            width: 100%;
+            padding-left: 15px;
+            padding-right: 15px;
+
+            @include media(small-tablet-min) {
+                width: auto;
+                padding-left: 0;
+            }
+        }
+
+        select,
+        textarea,
+        input {
+            width: 100%;
+            max-width: 270px;
+        }
+
+        textarea {
+            min-height: 150px;
+        }
+
+        .react-datepicker__input-container {
+            width: 270px;
+        }
+
+        .react-datepicker__time-list {
+            padding: 0;
+
+            .react-datepicker__time-list-item {
+                width: 55px;
+            }
+        }
+    }
+
+    .error {
+        color: #FF0000;
+    }
+}
+
+.button,
+button {
+    padding: 5px 10px;
+    border: 1px solid #D3D3D3;
+    border-radius: 5px;
+    background: #D3D3D3;
+    outline: none;
+    color: #000000;
+    text-decoration: none;
+    font-size: 14px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+
+    &:disabled {
+        background: #FFFFFF;
+    }
+}
+
+select,
+textarea,
+input {
+    padding: 5px 10px;
+    border: 1px solid #D3D3D3;
+    border-radius: 5px;
+    background: #FFFFFF;
+    outline: none;
+
+    &:disabled {
+        background: #D3D3D3;
+    }
+}
